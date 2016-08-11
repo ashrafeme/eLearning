@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Learning.Data
-{
-    public class Class1
-    {
+namespace Learning.Data.Entities {
+    interface IEntity<TKey> where TKey : struct {
+        TKey Id { get; set; }
     }
 }
