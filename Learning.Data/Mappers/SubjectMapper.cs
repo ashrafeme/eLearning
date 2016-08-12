@@ -6,17 +6,14 @@ using System.Linq;
 using System.Web;
 
 namespace Learning.Data.Mappers {
-    public class SubjectMap : EntityTypeConfiguration<Entities.Subject> {
-        public SubjectMap() {
+    public class SubjectMapper :
+        BaseMapper<Entities.Subject> {
+        public SubjectMapper() {
             this.ToTable("subject");
 
-            this.HasKey(c => c.Id);
-
-            this.Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            this.Property(c => c.Id).IsRequired();
-
-            this.Property(e => e.Name).IsRequired();
-            this.Property(e => e.Name).HasMaxLength(255);
+            this.Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(255);
 
         }
     }

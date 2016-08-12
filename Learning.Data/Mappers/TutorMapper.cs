@@ -5,18 +5,12 @@ using System.Linq;
 using System.Web;
 
 namespace Learning.Data.Mappers {
-    public class TutorMap :
-        EntityTypeConfiguration<Entities.Tutor>{
+    public class TutorMapper :
+        BaseMapper<Entities.Tutor>{
 
-        public TutorMap() {
+        public TutorMapper() {
             this.ToTable("Tutors");
-
-            this.HasKey(c => c.Id);
-
-            this.Property(c => c.Id)
-                .IsRequired()
-                .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
-
+           
             this.Property(c => c.FirstName)
                 .IsRequired()
                 .HasMaxLength(50);

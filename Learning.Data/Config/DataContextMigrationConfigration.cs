@@ -16,6 +16,8 @@ namespace Learning.Data.Config {
 
         protected override void Seed(DataContext context) {
 
+            DataSeeder ds = new DataSeeder(context);
+            ds.Seed();
             base.Seed(context);
         }
 

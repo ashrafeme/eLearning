@@ -22,7 +22,8 @@ namespace Learning.Data.Mappers {
                 .IsOptional();
 
             this.Property(c => c.Duration)
-                .IsRequired();
+                .IsRequired()
+                ;
 
             this.HasRequired(c => c.CourseSubject)
                 .WithMany()

@@ -5,17 +5,19 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Learning.Data.Entities;
 
 namespace Learning.Data {
-    class EntityRepository<T> : IEntityRepository<T>
-        where T : Entities.BaseEntity, new() {
+    public class EntityRepository<T, TContext> : IEntityRepository<T>
+        where T : Entities.BaseEntity, new()
+        where TContext : DbContext{
 
-        readonly DbContext dbContext;
+        protected readonly TContext dbContext;
 
         public EntityRepository(DbContext db) {
             if (db == null)
                throw new ArgumentNullException("dbContext");
-            dbContext = db;
+            dbContext = db as TContext;
         }
 
         public IQueryable<T> All {
@@ -54,8 +56,8 @@ namespace Learning.Data {
             return FindBy(ee=>ee.IsActive==true);
         }
 
-        public T GetSingle(object key) {
-            return GetAll().FirstOrDefault(x => x.Id == (int)key);
+        public async Task<T> GetSingleAsync(object key) {
+            return await GetAll().FirstOrDefaultAsync(x => x.Id == (int)key);
         }
 
         public IQueryable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties) {
@@ -69,5 +71,18 @@ namespace Learning.Data {
         public void Save() {
             dbContext.SaveChanges();
         }
+
+        public async Task SaveAsync() {
+           await dbContext.SaveChangesAsync();
+        }
+
+        public T FindOne(Expression<Func<T, bool>> where = null) {
+            return FindBy(where).FirstOrDefault();
+        }
+
+        public async Task<T> FindOneAsync(Expression<Func<T, bool>> where = null) {
+            return await FindBy(where).FirstOrDefaultAsync();
+        }
+
     }
 }
