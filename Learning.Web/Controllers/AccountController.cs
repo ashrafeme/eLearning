@@ -321,6 +321,7 @@ namespace Learning.Web.Controllers
         // POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]
+        
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
         {
             if (!ModelState.IsValid)
