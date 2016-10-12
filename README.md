@@ -1,2 +1,2 @@
 # eLearning
-Resuful Asp.net web API
+RESTful Asp.net web API
