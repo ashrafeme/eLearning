@@ -17,6 +17,7 @@ namespace Learning.Web.Controllers
         public CoursesController(ICourseService courseService) {
             this.courseService = courseService;
         }
+        
         public IEnumerable<Course> Get() {
              var data = courseService.GetAllCourses();
             return data;

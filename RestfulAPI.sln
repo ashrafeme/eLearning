@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Data", "Learning.Data\Learning.Data.csproj", "{C4C88521-30CB-4CF5-B9CC-E1E882FD1FA9}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Web.Tests", "Learning.Web.Tests\Learning.Web.Tests.csproj", "{99A0D58D-848F-4AB6-A21F-1B3008A3FADA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Services", "Learning.Services\Learning.Services.csproj", "{6F30846D-906E-4BC4-A216-31DD1FAB6B58}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebCore", "WebCore\WebCore.xproj", "{76051D66-FB06-44F4-A32D-5F22178E5ED8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6F30846D-906E-4BC4-A216-31DD1FAB6B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F30846D-906E-4BC4-A216-31DD1FAB6B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F30846D-906E-4BC4-A216-31DD1FAB6B58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76051D66-FB06-44F4-A32D-5F22178E5ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76051D66-FB06-44F4-A32D-5F22178E5ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76051D66-FB06-44F4-A32D-5F22178E5ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76051D66-FB06-44F4-A32D-5F22178E5ED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
